@@ -18,8 +18,7 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/bggRGjQaUbCoE/PiliPlus",
-        "skip": true
+        "github": "https://github.com/bggRGjQaUbCoE/PiliPlus"
     },
     "autoupdate": {
         "architecture": {
