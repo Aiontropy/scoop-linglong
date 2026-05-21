@@ -1,0 +1,37 @@
+{
+    "version": "260401",
+    "description": "PotPlayer Portable - Powerful media player with settings saved in INI file.",
+    "homepage": "https://potplayer.daum.net/",
+    "license": "Freeware",
+    "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/260401/PotPlayerSetup64.exe#/dl.7z",
+    "hash": "3a656da25ed1f5dd8954066bc83dad2d6d7194779edc51a41abf7a45b50c2a93",
+    "bin": [["PotPlayerMini64.exe", "potplayer"]],
+    "shortcuts": [["PotPlayerMini64.exe", "PotPlayer Portable"]],
+    "pre_install": [
+        "if (!(Test-Path \"$dir/PotPlayerMini64.ini\")) {",
+        "    Set-Content \"$dir/PotPlayerMini64.ini\" \"[Config]`r`nStoreInIni=1\" -Encoding Ascii",
+        "}"
+    ],
+    "persist": [
+        "Capture",
+        "Extension",
+        "Extention",
+        "IconPack",
+        "Logos",
+        "Module",
+        "Playlist",
+        "Skins",
+        "UrlList",
+        "PotPlayer.ini",
+        "PotPlayer64.ini",
+        "PotPlayerMini.ini",
+        "PotPlayerMini64.ini"
+    ],
+    "checkver": {
+        "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/LatestVersion.html",
+        "regex": "LatestVersion=([\\d]+)"
+    },
+    "autoupdate": {
+        "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/$version/PotPlayerSetup64.exe#/dl.7z"
+    }
+}
